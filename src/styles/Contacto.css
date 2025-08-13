@@ -1,0 +1,94 @@
+.contacto-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.contacto-container h1 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contacto-section {
+  margin-bottom: 25px;
+}
+
+.contacto-section h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.contacto-info {
+  margin: 10px 0;
+  color: #555;
+}
+
+.contacto-info a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.contacto-info a:hover {
+  text-decoration: underline;
+}
+
+.contacto-divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 30px 0;
+}
+
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-btn {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  align-self: flex-start;
+}
+
+.submit-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Estilos para campos requeridos */
+input:required, textarea:required {
+  border-left: 3px solid #e74c3c;
+}
