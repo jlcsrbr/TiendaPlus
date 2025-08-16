@@ -40,7 +40,7 @@ function Header() {
 
         {/* Iconos */}
         <div className="icons">
-          <FaRegHeart  size={20}/>
+          <Link to="/lista-deseos"><FaRegHeart size={20} /></Link> {/* Icono de lista de deseos modificado para link de pagina lista de deseos---jorge bobadilla*/}
           <FaShoppingCart size={20}/>
           <FaRegUser size={20}/>
         </div>

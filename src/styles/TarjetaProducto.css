@@ -1,0 +1,223 @@
+/* Estilos para TarjetaProducto */
+
+.tarjeta-producto {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 280px;
+  text-align: center;
+}
+
+.tarjeta-producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* Para mantener la relación de aspecto 1:1 */
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.imagen-producto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%; /* Ajustado para que la imagen se vea mejor */
+  height: auto;
+}
+
+.producto-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff6347;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.producto-acciones {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  visibility: hidden; /* Oculto por defecto */
+  opacity: 0;
+  transform: translateX(10px);
+  transition: visibility 0s, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tarjeta-producto:hover .producto-acciones {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.icono-boton {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icono-boton:hover {
+  transform: scale(1.1);
+}
+
+.boton-anadir-producto-al-carrito {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transform: translateY(100%);
+  transition: transform 0.3s ease, background-color 0.2s;
+}
+
+.tarjeta-producto:hover .boton-anadir-producto-al-carrito {
+  transform: translateY(0);
+}
+
+.boton-anadir-producto-al-carrito:hover {
+  background-color: #444444;
+}
+
+.producto-detalles {
+  padding: 1rem;
+  text-align: left;
+}
+
+.producto-nombre {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.producto-valorizacion {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.cantidad-valorizacion {
+  color: #ffc107;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.cantidad-resenas {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.producto-precio {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.precio-original {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 8px;
+  font-size: 0.9rem;
+}
+
+.descuento-tag {
+  background-color: #ff6347;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.precio-final {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.producto-colores {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.color-circulo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+
+/* Estilos para el Modal de Vista Rápida */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  max-height: 90%;
+  overflow: hidden;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
