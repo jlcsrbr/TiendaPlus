@@ -1,0 +1,102 @@
+.inicio-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin: 32px 0 0 0;
+  padding: 0 32px;
+  /*alinear todo al centro*/
+  justify-content: center;
+}
+
+/* Que la sección de ofertas rompa a nueva fila y use 100% del ancho */
+.ofertas-section {
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+.masVendidos-section {
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+.nuevosProductos-section {
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+.categorias-bar {
+  min-width: 220px;
+  border-right: 1px solid #e0e0e0;
+  padding-right: 24px;
+}
+
+.categorias-bar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categorias-bar li {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.08rem;
+  padding: 12px 0 12px 8px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.categorias-bar li:hover,
+.categorias-bar li:focus {
+  color: #e53935;
+  font-weight: 500;
+}
+
+.slider-section {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: flex-start;  /* Alinea arriba, no al centro vertical */
+  min-height: unset;        /* Quita el min-height si no quieres centrar vertical */
+}
+
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #bbb;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dot.active {
+  background: #e53935;
+}
+
+.categorias-bar .cat-link {
+  background: none;
+  border: 0;
+  padding: 4px 0;
+  cursor: pointer;
+  color: #111827;
+}
+.categorias-bar .cat-link:hover { text-decoration:dotted; }
+
+@media (max-width: 900px) {
+  .slider {
+    width: 98vw;
+    height: 220px;
+  }
+  .slider-content {
+    left: 16px;
+    top: 16px;
+    max-width: 180px;
+  }
+  .slider-img {
+    width: 180px;
+  }
+  .categorias-bar {
+    min-width: 120px;
+    padding-right: 8px;
+  }
+}

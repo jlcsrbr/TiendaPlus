@@ -25,6 +25,7 @@ function Header() {
         {/* Menú */}
         <nav className="nav-links">
           <Link to="/">Inicio</Link>
+          <Link to="/productos">Productos</Link>
           <Link to="/contacto">Contacto</Link>
           <Link to="/acerca-de">Acerca de</Link>
           <Link to="/registrarse">Registrarse</Link>
@@ -42,7 +43,7 @@ function Header() {
         <div className="icons">
           <Link to="/lista-deseos"><FaRegHeart size={20} /></Link> {/* Icono de lista de deseos modificado para link de pagina lista de deseos---jorge bobadilla*/}
           <FaShoppingCart size={20}/>
-          <FaRegUser size={20}/>
+          <Link to="/logeo"><FaRegUser size={20}/></Link>
         </div>
       </div>
       <hr style={{border: "none",height: "2px",backgroundColor: "gray" ,opacity: 0.5}}

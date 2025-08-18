@@ -1,0 +1,197 @@
+body {
+  background: #fff;
+}
+
+.registro-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100%;
+}
+
+.registro-container {
+  display: flex;
+  height: auto;
+  max-height: 535px; 
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  overflow: hidden;
+  margin: auto auto;
+  /* para pantallas muy altas */
+}
+
+
+.registro-img-section {
+  flex: 1;                 /* proporción pareja con el formulario */
+  background: #C9E2E7;
+  display: flex;
+  align-items: stretch;     /* la imagen rellenará toda la altura */
+  justify-content: center;
+  padding: 0;
+  min-width: 0;             /* evita forzar ancho mínimo */
+  /* quita min-height si no la necesitas */
+}
+
+.registro-img-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;        /* <- clave: sin “letterboxing” */
+  display: block;
+}
+
+.registro-form-section {
+  flex: 1;
+  padding: 64px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.registro-form-section h2 {
+  font-size: 2.4rem;        /* más grande */
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.registro-subtitle { 
+  color:#444; 
+  margin-bottom: 28px; 
+}
+
+.registro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.registro-form input {
+  border: none;
+  border-bottom: 1px solid #bbb;
+  padding: 1px 0;
+  font-size: 1rem;
+  outline: none;
+  background: transparent;
+  margin-bottom: 5px;
+  transition: border-color 0.2s;
+}
+
+.registro-form input:focus {
+  border-bottom: 1.5px solid #e53935;
+}
+
+.btn-rojo {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  padding: 13px 0;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-rojo:hover {
+  background: #c62828;
+}
+
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #bbb;
+  background: #fff;
+  color: #222;
+  padding: 12px 0;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+}
+
+.btn-google:hover {
+  background: #f5f5f5;
+  border: 1.5px solid #888;
+}
+
+.google-icon {
+  font-size: 1.3rem;
+  color: #ea4335;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+.registro-login-link {
+  margin-top: 25px;
+  text-align: center;
+  color: #444;
+  font-size: 0.98rem;
+}
+
+.registro-login-link a {
+  color: #222;
+  text-decoration: underline;
+  margin-left: 4px;
+  font-weight: 500;
+}
+
+@media (max-width: 1100px) {
+  .registro-container {
+    width: 98vw;
+  }
+  .registro-form-section {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .registro-container {
+    flex-direction: column;
+    min-width: 320px;
+    width: 98vw;
+  }
+  .registro-img-section {
+    padding: 30px 0;
+  }
+  .registro-form-section {
+    padding: 30px 10px;
+  }
+}
+
+/* Estilos específicos para Logeo */
+.btn-acceso {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  padding: 13px 30px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logeo-btn-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.olvidar-link {
+  color: #e53935;
+  text-decoration: none;
+  font-size: 0.98rem;
+  font-weight: 500;
+  transition: text-decoration 0.2s;
+}
+
+.olvidar-link:hover {
+  text-decoration: underline;
+}
