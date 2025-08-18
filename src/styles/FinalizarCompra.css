@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.breadcrumb {
+  padding: 15px 30px;
+  font-size: 14px;
+  color: gray;
+}
+
+.checkout-main {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+}
+
+.billing-form, .order-summary {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.billing-form {
+  flex: 2;
+}
+
+.billing-form form input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.order-summary {
+  flex: 1;
+}
+
+.order-summary h3 {
+  margin-top: 0;
+}
+
+.order-items p, .order-summary p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment {
+  margin: 15px 0;
+}
+
+.coupon {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.coupon input {
+  flex: 2;
+  padding: 8px;
+}
+
+.coupon button {
+  flex: 1;
+  background: rgb(255, 255, 255);
+  color: white;
+  border: none;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 10px;
+  background: red;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
