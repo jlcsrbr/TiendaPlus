@@ -1,0 +1,124 @@
+/* Contenedor Swiper */
+.mySwiper {
+  width: 100%;
+  max-width: 1200px;   /* opcional */
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Slide */
+.banner-slide {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr; /* texto / imagen */
+  align-items: center;
+  gap: 24px;
+  min-height: 400px;
+  padding: 40px 48px;
+  color: #fff;
+}
+
+/* Columna izquierda */
+.banner-left .apple {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.apple-circle {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #111;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.kicker {
+  font-size: 16px;
+  color: #cfcfcf;
+}
+
+.title {
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.05;
+  font-weight: 700;
+  margin: 10px 0 22px;
+}
+
+.title .block {
+  display: block;
+}
+
+/* CTA subrayado estilo "Compra ahora" */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.cta::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: currentColor;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* Columna derecha (imagen) */
+.banner-right {
+  display: grid;
+  place-items: center end;
+}
+
+.banner-right img {
+  width: min(520px, 100%);
+  height: 400px;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6));
+  transform: translateY(6px);
+}
+
+/* Paginación (puntos) */
+.swiper-pagination {
+  bottom: 14px !important; /* separa los puntos del borde */
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #6b7280; /* gris */
+  opacity: 1;
+  margin: 0 6px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #e11d48;           /* rojo activo */
+  border: 2px solid #ffffff;      /* borde blanco como en el ejemplo */
+  width: 10px;
+  height: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .banner-slide {
+    grid-template-columns: 1fr;
+    padding: 28px 24px 48px;
+    min-height: 440px;
+  }
+  .banner-right img {
+    width: min(420px, 90%);
+  }
+}

@@ -108,6 +108,7 @@
 .producto-detalles {
   padding: 1rem;
   text-align: left;
+  min-height: 150px; /* Asegura espacio para el contenido */
 }
 
 .producto-nombre {
