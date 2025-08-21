@@ -10,6 +10,7 @@ import Logeo from "./pages/Logeo";
 import Inicio from './pages/Inicio';
 import Productos from './pages/Productos';
 import Carrito from './pages/Carrito';
+import ProductoPage from "./pages/ProductoPage";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
         <Route path="/logeo" element={<Logeo />} />
         <Route path="/lista-deseos" element={<ListaDeseos />} /> {/* Ruta para la lista de deseos añadido---jorge bobadilla */}
         <Route path="/carrito" element={<Carrito />} />
+
+        {/**/}
+        <Route path="/producto/:id" element={<ProductoPage />} />
       </Routes>
 
       <Footer />
