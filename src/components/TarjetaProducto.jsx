@@ -1,7 +1,8 @@
 import React, { useState, useMemo } from "react";
 import "../styles/TarjetaProducto.css";
-import { FaEye, FaRegHeart } from "react-icons/fa";
+import { FaEye, FaRegHeart, FaHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useListaDeseos } from "../context/ListaDeseosContexto";
 
 const TarjetaProducto = (props) => {
   const {
@@ -48,7 +49,13 @@ const TarjetaProducto = (props) => {
   const handleAddToCart = () => {
     if (typeof onAddToCart === "function") onAddToCart(product);
   };
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useListaDeseos();
   const handleWishlist = () => {
+    if (isInWishlist(id)) {
+      removeFromWishlist(id);
+    } else {
+      addToWishlist(product);
+    }
     if (typeof onWishlist === "function") onWishlist(product);
   };
 
@@ -79,8 +86,8 @@ const TarjetaProducto = (props) => {
               <button className="icono-boton" onClick={handleOpenModal} aria-label="Vista rápida">
                 <FaEye />
               </button>
-              <button className="icono-boton" onClick={handleWishlist} aria-label="Agregar a favoritos">
-                <FaRegHeart />
+              <button className="icono-boton" onClick={handleWishlist} aria-label={isInWishlist(id) ? "Quitar de favoritos" : "Agregar a favoritos"}>
+                {isInWishlist(id) ? <FaHeart color="#e74c3c" /> : <FaRegHeart />}
               </button>
             </div>
           )}
