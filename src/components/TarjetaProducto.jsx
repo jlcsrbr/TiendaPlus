@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import "../styles/TarjetaProducto.css";
 import { FaEye, FaRegHeart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const TarjetaProducto = (props) => {
   const {
@@ -13,8 +14,9 @@ const TarjetaProducto = (props) => {
     showActions = true,
     showAddButton = true,
   } = props;
-
+  const navigate = useNavigate();
   const {
+    id,
     nombreProducto = "",
     imagenProducto = "",
     precio = 0,
@@ -69,6 +71,7 @@ const TarjetaProducto = (props) => {
             alt={nombreProducto}
             loading="lazy"
             draggable="false"
+            onClick={() => navigate(`/producto/${id}`)} //  manda al detalle
           />
 
           {showActions && (

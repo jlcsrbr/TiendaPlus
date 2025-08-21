@@ -1,0 +1,176 @@
+
+
+.producto-page {
+  display: flex;
+  flex-wrap: wrap; /* responsive */
+  gap: 40px;
+  margin-bottom: 50px;
+  align-items: flex-start;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* Imagen */
+.producto-imagen img {
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-imagen img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* Info */
+.producto-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.producto-page-nombre {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.producto-page-precio {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #e63946;
+  margin-bottom: 20px;
+}
+
+.producto-page-descripcion {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+/* Colores */
+.producto-page-colores {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.producto-page-color-circulo {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.producto-page-color-circulo:hover {
+  transform: scale(1.2);
+  border-color: #333;
+}
+/*Boton incremento*/
+.incrementButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.incrementButton button {
+  background-color: #e63946; 
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.incrementButton button:hover {
+  background-color: #c82333; 
+  transform: scale(1.05);
+}
+
+.incrementButton input {
+  width: 50px;
+  height: 35px;
+  text-align: center;
+  font-size: 1rem;
+  border: 2px solid #333;
+  border-radius: 6px;
+  outline: none;
+  font-weight: bold;
+  color: #333;
+}
+/* Botones */
+.producto-page-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.producto-page-btn-comprar,
+.producto-page-btn-carrito {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.producto-page-btn-comprar {
+  background: linear-gradient(135deg, #ff4d4f, #d72638);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(255,77,79,0.4);
+}
+
+.producto-page-btn-comprar:hover {
+  background: linear-gradient(135deg, #d72638, #a61e2a);
+  transform: translateY(-2px);
+}
+
+.producto-page-btn-carrito {
+  background: linear-gradient(135deg, #4caf50, #388e3c);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(76,175,80,0.4);
+}
+
+.producto-page-btn-carrito:hover {
+  background: linear-gradient(135deg, #388e3c, #256d2b);
+  transform: translateY(-2px);
+}
+
+/* Otros productos */
+h2 {
+  font-size: 1.6rem;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: #333;
+}
+/* Beneficios */
+.producto-beneficios {
+  max-width: 450px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.beneficio {
+  font-size: 1.2rem;
+}
+
+.beneficio small {
+  color: #777;
+}

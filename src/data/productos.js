@@ -68,6 +68,8 @@ export const productos = [
     resenas: 210,
     esNuevo: false,
     colores: ["#111827"], // negro
+    descripcion:
+      "Disfruta de tus series y películas favoritas con una pantalla LED de 40 pulgadas en Full HD, con sistema Google TV integrado para acceder a tus aplicaciones favoritas.",
   },
   {
     id: 1002,
@@ -81,6 +83,7 @@ export const productos = [
     resenas: 95,
     esNuevo: true,
     colores: ["#1f2937", "#64748b"], // gris oscuro / gris
+    descripcion:"El ZTE Blade V70 Max tiene dos cámaras. La principal es de 50MP, con la cual podrás tomar fotos con mucha precisión y resolución, también podrás grabar videos en sus diferentes modos en 1080p que te permite capturar fácilmente los detalles más sutiles."
   },
   {
     id: 1003,
@@ -94,6 +97,7 @@ export const productos = [
     resenas: 132,
     esNuevo: false,
     colores: ["#111827"], // negro
+    descripcion:"Impresora multifuncional con conectividad Wi-Fi y ADF (alimentador automático de documentos) para facilitar la impresión, escaneo y copiado de documentos en casa o en la oficina."
   },
   {
     id: 1004,
@@ -108,6 +112,7 @@ export const productos = [
     resenas: 76,
     esNuevo: true,
     colores: ["#e5e7eb", "#111827"], // plateado / negro
+    descripcion:"Portátil HP 15-fd0257la con procesador Intel Core i5-1334U, 16GB de RAM y 512GB de almacenamiento SSD, ideal para tareas diarias y multitarea eficiente.",
   },
   {
     id: 1005,
@@ -121,6 +126,7 @@ export const productos = [
     resenas: 430,
     esNuevo: false,
     colores: ["#111827"], // negro
+    descripcion:"Barra de sonido con subwoofer inalámbrico y conexión Bluetooth."
   },
   {
     id: 1006,
@@ -134,6 +140,7 @@ export const productos = [
     resenas: 120,
     esNuevo: true,
     colores: ["#a78bfa", "#ffffff"], // morado / blanco
+    descripcion :"Smartwatch con monitoreo de frecuencia cardíaca, oxígeno en sangre y modos deportivos."
   },
   {
     id: 2001,
@@ -772,6 +779,7 @@ export const productos = [
     esNuevo: false,
     colores: ["#2a6fd5", "#ffffff"],
   },
+ 
 ];
 
 
