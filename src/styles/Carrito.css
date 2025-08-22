@@ -6,6 +6,11 @@
   color: #666;
 }
 
+.breadcrumb span {
+  cursor: pointer;
+  color: #007bff;
+}
+
 /* Tabla carrito */
 .cart-table {
   padding: 20px 30px;

@@ -1,0 +1,18 @@
+:root {
+  --font-main: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+               Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Reseteos suaves */
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Asegura que inputs y botones hereden la fuente */
+button, input, textarea, select {
+  font-family: inherit;
+}

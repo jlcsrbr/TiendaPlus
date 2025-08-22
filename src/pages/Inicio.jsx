@@ -64,7 +64,7 @@ const Inicio = () => {
           imagenAlt="Parlante JBL"
           ctaTexto="¡Compra ahora!"
           // manda a productos ya filtrado:
-          ctaHref="/productos?categoria=Electrónicos"
+          ctaHref="/producto/1007"
           mostrarContador
           fechaObjetivo="2025-09-30T23:59:59-05:00"
         />
