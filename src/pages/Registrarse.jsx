@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Registrarse.css';
 import carritoImg from '../assets/registrarse-carrito.png';
 import { FcGoogle } from 'react-icons/fc'; // <-- Agrega esta línea
+import { Link } from 'react-router-dom';
 
 const Registrarse = () => {
   return (
@@ -23,7 +24,7 @@ const Registrarse = () => {
             <span className="google-icon"><FcGoogle /></span> Registrarse con Google
           </button>
           <div className="registro-login-link">
-            ¿Ya tienes cuenta? <a href="#">Ingresar</a>
+            ¿Ya tienes cuenta? <Link to="/logeo">Ingresar</Link>
           </div>
         </div>
       </div>

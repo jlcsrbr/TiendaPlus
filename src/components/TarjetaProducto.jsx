@@ -1,14 +1,15 @@
 import React, { useState, useMemo } from "react";
+import { createPortal } from "react-dom";
 import "../styles/TarjetaProducto.css";
 import { FaEye, FaRegHeart, FaHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useListaDeseos } from "../context/ListaDeseosContexto";
+import { useCarrito } from "../context/CarritoContexto";
 
 const TarjetaProducto = (props) => {
   const {
     product = {},
     // callbacks opcionales (no cambian estilos):
-    onAddToCart,
     onWishlist,
     onPreview,
     // flags opcionales por si quieres ocultar acciones/botón sin tocar CSS
@@ -29,6 +30,8 @@ const TarjetaProducto = (props) => {
     colores = [],
   } = product;
 
+  const { agregarAlCarrito } = useCarrito();
+
   const precioFinal = useMemo(
     () => (descuento ? precio - (precio * descuento) / 100 : precio),
     [precio, descuento]
@@ -47,7 +50,7 @@ const TarjetaProducto = (props) => {
     `${divisa} ${Number(num).toFixed(2)}`;
 
   const handleAddToCart = () => {
-    if (typeof onAddToCart === "function") onAddToCart(product);
+    agregarAlCarrito(product);
   };
   const { addToWishlist, removeFromWishlist, isInWishlist } = useListaDeseos();
   const handleWishlist = () => {
@@ -138,20 +141,22 @@ const TarjetaProducto = (props) => {
       </div>
 
       {/* Modal de vista rápida (mismo estilo/clases del CSS actual) */}
-      {isModalOpen && (
-        <div className="modal-overlay" onClick={handleCloseModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="modal-close-btn"
-              onClick={handleCloseModal}
-              aria-label="Cerrar"
-            >
-              &times;
-            </button>
-            <img className="modal-image" src={imagenProducto} alt={nombreProducto} />
-          </div>
-        </div>
-      )}
+      {isModalOpen &&
+        createPortal(
+          <div className="modal-overlay" onClick={handleCloseModal}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <button
+                className="modal-close-btn"
+                onClick={handleCloseModal}
+                aria-label="Cerrar"
+              >
+                &times;
+              </button>
+              <img className="modal-image" src={imagenProducto} alt={nombreProducto} />
+            </div>
+          </div>,
+          document.getElementById("modal-portal")
+        )}
     </>
   );
 };

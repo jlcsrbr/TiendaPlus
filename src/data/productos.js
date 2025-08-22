@@ -54,6 +54,7 @@ import imgGarnierMask from "../assets/saludybelleza/Mascarilla De Tela Garnier E
 import imgGarnierSerum from "../assets/saludybelleza/Sérum Facial Garnier Anti Manchas Noche Vitaminca C Envase 30 mL.png";
 import imgNiveaSerum from "../assets/saludybelleza/Sérum Facial Nivea Luminous 630 Anti Edad Envase 30 mL.png";
 import imgNiveaWipes from "../assets/saludybelleza/Toallitas Desmaquillantes Nivea Micelares 4 En 1 Empaque 25 Und.png";
+import JBLBB2 from "../assets/electronicos/JBL_BOOMBOX_2_HERO.png";
 
 export const productos = [
     {
@@ -141,6 +142,20 @@ export const productos = [
     esNuevo: true,
     colores: ["#a78bfa", "#ffffff"], // morado / blanco
     descripcion :"Smartwatch con monitoreo de frecuencia cardíaca, oxígeno en sangre y modos deportivos."
+  },
+  {
+    id: 1007,
+    categoria: "Electrónicos",
+    nombreProducto: "JBL Boombox 2 Altavoz Portatil",
+    imagenProducto: JBLBB2,
+    precio: 1599,
+    descuento: 20,
+    divisa: "S/",
+    valorizacion: 4.4,
+    resenas: 122,
+    esNuevo: true,
+    colores: ["#000000ff"],
+    descripcion :"Boombox 2 de JBL te da unos impresionantes graves con un atrevido diseño durante 24 increíbles horas de reproducción."
   },
   {
     id: 2001,
