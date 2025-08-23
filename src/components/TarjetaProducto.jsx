@@ -3,14 +3,14 @@ import { createPortal } from "react-dom";
 import "../styles/TarjetaProducto.css";
 import { FaEye, FaRegHeart, FaHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { useListaDeseos } from "../context/ListaDeseosContexto";
+import { usarListaDeseos } from "../context/ListaDeseosContexto";
 import { useCarrito } from "../context/CarritoContexto";
 
 const TarjetaProducto = (props) => {
   const {
     product = {},
     // callbacks opcionales (no cambian estilos):
-    onWishlist,
+  onListaDeseos,
     onPreview,
     // flags opcionales por si quieres ocultar acciones/botón sin tocar CSS
     showActions = true,
@@ -52,14 +52,14 @@ const TarjetaProducto = (props) => {
   const handleAddToCart = () => {
     agregarAlCarrito(product);
   };
-  const { addToWishlist, removeFromWishlist, isInWishlist } = useListaDeseos();
-  const handleWishlist = () => {
-    if (isInWishlist(id)) {
-      removeFromWishlist(id);
+  const { agregarListaDeseos, eliminarListaDeseos, EstaEnListaDeseos } = usarListaDeseos();
+  const manejarListaDeseos = () => {
+    if (EstaEnListaDeseos(id)) {
+      eliminarListaDeseos(id);
     } else {
-      addToWishlist(product);
+  agregarListaDeseos(product);
     }
-    if (typeof onWishlist === "function") onWishlist(product);
+  if (typeof onListaDeseos === "function") onListaDeseos(product);
   };
 
   // Render de estrellas con los mismos caracteres que tu CSS admite
@@ -89,8 +89,8 @@ const TarjetaProducto = (props) => {
               <button className="icono-boton" onClick={handleOpenModal} aria-label="Vista rápida">
                 <FaEye />
               </button>
-              <button className="icono-boton" onClick={handleWishlist} aria-label={isInWishlist(id) ? "Quitar de favoritos" : "Agregar a favoritos"}>
-                {isInWishlist(id) ? <FaHeart color="#e74c3c" /> : <FaRegHeart />}
+              <button className="icono-boton" onClick={manejarListaDeseos} aria-label={EstaEnListaDeseos(id) ? "Quitar de favoritos" : "Agregar a favoritos"}>
+                {EstaEnListaDeseos(id) ? <FaHeart color="#e74c3c" /> : <FaRegHeart />}
               </button>
             </div>
           )}

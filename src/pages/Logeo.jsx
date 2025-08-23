@@ -17,7 +17,7 @@ const Logeo = () => {
             <input type="text" placeholder="Correo o número de telefono" />
             <input type="password" placeholder="Contraseña" />
             <div className="logeo-btn-row">
-              <Link to="/inicio"><button type="submit" className="btn-acceso">Acceso</button></Link>
+              <Link to="/"><button type="submit" className="btn-acceso">Acceso</button></Link>
               <p>Olvidaste la Contraseña?</p>
             </div>
           </form>
