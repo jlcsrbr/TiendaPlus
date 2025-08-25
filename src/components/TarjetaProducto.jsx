@@ -1,15 +1,16 @@
 import React, { useState, useMemo } from "react";
+import { createPortal } from "react-dom";
 import "../styles/TarjetaProducto.css";
 import { FaEye, FaRegHeart, FaHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { useListaDeseos } from "../context/ListaDeseosContexto";
+import { usarListaDeseos } from "../context/ListaDeseosContexto";
+import { useCarrito } from "../context/CarritoContexto";
 
 const TarjetaProducto = (props) => {
   const {
     product = {},
     // callbacks opcionales (no cambian estilos):
-    onAddToCart,
-    onWishlist,
+  onListaDeseos,
     onPreview,
     // flags opcionales por si quieres ocultar acciones/botón sin tocar CSS
     showActions = true,
@@ -29,6 +30,8 @@ const TarjetaProducto = (props) => {
     colores = [],
   } = product;
 
+  const { agregarAlCarrito } = useCarrito();
+
   const precioFinal = useMemo(
     () => (descuento ? precio - (precio * descuento) / 100 : precio),
     [precio, descuento]
@@ -47,16 +50,16 @@ const TarjetaProducto = (props) => {
     `${divisa} ${Number(num).toFixed(2)}`;
 
   const handleAddToCart = () => {
-    if (typeof onAddToCart === "function") onAddToCart(product);
+    agregarAlCarrito(product);
   };
-  const { addToWishlist, removeFromWishlist, isInWishlist } = useListaDeseos();
-  const handleWishlist = () => {
-    if (isInWishlist(id)) {
-      removeFromWishlist(id);
+  const { agregarListaDeseos, eliminarListaDeseos, EstaEnListaDeseos } = usarListaDeseos();
+  const manejarListaDeseos = () => {
+    if (EstaEnListaDeseos(id)) {
+      eliminarListaDeseos(id);
     } else {
-      addToWishlist(product);
+  agregarListaDeseos(product);
     }
-    if (typeof onWishlist === "function") onWishlist(product);
+  if (typeof onListaDeseos === "function") onListaDeseos(product);
   };
 
   // Render de estrellas con los mismos caracteres que tu CSS admite
@@ -86,8 +89,8 @@ const TarjetaProducto = (props) => {
               <button className="icono-boton" onClick={handleOpenModal} aria-label="Vista rápida">
                 <FaEye />
               </button>
-              <button className="icono-boton" onClick={handleWishlist} aria-label={isInWishlist(id) ? "Quitar de favoritos" : "Agregar a favoritos"}>
-                {isInWishlist(id) ? <FaHeart color="#e74c3c" /> : <FaRegHeart />}
+              <button className="icono-boton" onClick={manejarListaDeseos} aria-label={EstaEnListaDeseos(id) ? "Quitar de favoritos" : "Agregar a favoritos"}>
+                {EstaEnListaDeseos(id) ? <FaHeart color="#e74c3c" /> : <FaRegHeart />}
               </button>
             </div>
           )}
@@ -138,20 +141,22 @@ const TarjetaProducto = (props) => {
       </div>
 
       {/* Modal de vista rápida (mismo estilo/clases del CSS actual) */}
-      {isModalOpen && (
-        <div className="modal-overlay" onClick={handleCloseModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="modal-close-btn"
-              onClick={handleCloseModal}
-              aria-label="Cerrar"
-            >
-              &times;
-            </button>
-            <img className="modal-image" src={imagenProducto} alt={nombreProducto} />
-          </div>
-        </div>
-      )}
+      {isModalOpen &&
+        createPortal(
+          <div className="modal-overlay" onClick={handleCloseModal}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <button
+                className="modal-close-btn"
+                onClick={handleCloseModal}
+                aria-label="Cerrar"
+              >
+                &times;
+              </button>
+              <img className="modal-image" src={imagenProducto} alt={nombreProducto} />
+            </div>
+          </div>,
+          document.getElementById("modal-portal")
+        )}
     </>
   );
 };

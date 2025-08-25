@@ -1,6 +1,7 @@
 // Productos.jsx
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { productos } from "../data/productos.js"; // tu array largo
+import { useSearchParams } from "react-router-dom";
 import TarjetaProducto from "../components/TarjetaProducto.jsx";
 import "../styles/Productos.css";
 
@@ -18,9 +19,17 @@ const categorias = [
 ];
 
 const Productos = () => {
+  const [searchParams] = useSearchParams();
   const [selectedCats, setSelectedCats] = useState(new Set());
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
+
+  useEffect(() => {
+    const categoriaFromURL = searchParams.get("categoria");
+    if (categoriaFromURL && categorias.includes(categoriaFromURL)) {
+      setSelectedCats(new Set([categoriaFromURL]));
+    }
+  }, [searchParams]);
 
   const toggleCat = (cat) =>
     setSelectedCats(prev => {

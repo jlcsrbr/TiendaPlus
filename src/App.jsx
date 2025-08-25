@@ -1,5 +1,6 @@
 import React from 'react';
 import { ListaDeseosProvider } from "./context/ListaDeseosContexto";
+import { CarritoProvider } from "./context/CarritoContexto";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -12,9 +13,11 @@ import Inicio from './pages/Inicio';
 import Productos from './pages/Productos';
 import Carrito from './pages/Carrito';
 import ProductoPage from "./pages/ProductoPage";
+import FinalizarCompra from './pages/FinalizarCompra';
 
 function App() {
   return (
+  <CarritoProvider>
   <ListaDeseosProvider>
       <Router>
         <Header />
@@ -28,10 +31,12 @@ function App() {
           <Route path="/lista-deseos" element={<ListaDeseos />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/producto/:id" element={<ProductoPage />} />
+          <Route path="/carrito/finalizarcompra" element={<FinalizarCompra />} />
         </Routes>
         <Footer />
       </Router>
   </ListaDeseosProvider>
+  </CarritoProvider>
   );
 }
 

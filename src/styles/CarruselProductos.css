@@ -47,7 +47,11 @@
 .nav-btn.next::before { content: "›"; font-size: 20px; line-height: 1; }
 
 /* Asegura que la tarjeta ocupe toda la altura del slide */
-.carrusel-swiper { width: 100%; }
+.carrusel-swiper {
+  width: 100%;
+  padding-top: 4px; /* Espacio para la sombra superior */
+  padding-bottom: 16px; /* Espacio para la sombra inferior */
+}
 .carrusel-swiper .swiper-slide {
   height: auto;
   display: flex;

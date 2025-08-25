@@ -25,6 +25,7 @@
   line-height: 1.06;
   font-weight: 800;
   margin: 0 0 12px;
+  color: #fff
 }
 
 .promo-timer { display:flex; gap:16px; margin:22px 0 26px; }

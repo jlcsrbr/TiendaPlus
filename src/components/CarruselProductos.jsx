@@ -101,6 +101,7 @@ const CarruselProductos = ({
         keyboard={{ enabled: true }}
         mousewheel={{ forceToAxis: true }}
         spaceBetween={24}
+        slidesOffsetAfter={24}
         slidesPerView={1.1}
         breakpoints={{
           480: { slidesPerView: 1.5 },

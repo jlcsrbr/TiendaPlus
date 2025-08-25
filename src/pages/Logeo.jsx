@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/Registrarse.css';
 import carritoImg from '../assets/registrarse-carrito.png';
+import { Link } from 'react-router-dom'
 
 const Logeo = () => {
   return (
@@ -13,11 +14,11 @@ const Logeo = () => {
           <h2>Inicie sesion</h2>
           <p className="registro-subtitle">Ingrese sus datos</p>
           <form className="registro-form">
-            <input type="text" placeholder="Email or Phone Number" />
-            <input type="password" placeholder="Password" />
+            <input type="text" placeholder="Correo o número de telefono" />
+            <input type="password" placeholder="Contraseña" />
             <div className="logeo-btn-row">
-              <button type="submit" className="btn-acceso">Acceso</button>
-              <a href="#" className="olvidar-link">Olvidar Contraseña?</a>
+              <Link to="/"><button type="submit" className="btn-acceso">Acceso</button></Link>
+              <p>Olvidaste la Contraseña?</p>
             </div>
           </form>
         </div>
